@@ -167,7 +167,12 @@ func (l *Lexer) readIdentifier() string {
 
 func (l *Lexer) readNumber() string {
 	position := l.position
-	for isDigit(l.ch) {
+	hasDecimalPoint := false
+
+	for isDigit(l.ch) || (l.ch == '.' && !hasDecimalPoint) {
+		if l.ch == '.' {
+			hasDecimalPoint = true
+		}
 		l.readChar()
 	}
 	return l.input[position:l.position]
