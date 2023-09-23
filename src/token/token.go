@@ -45,7 +45,7 @@ const (
 
 	// Brackets
 	LPAREN = "("
-	RPAREN = "}"
+	RPAREN = ")"
 	LBRACE = "{"
 	RBRACE = "}"
 
